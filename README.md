@@ -6,10 +6,13 @@ Ein Webserver, der das Spiel hostet, kann aufgesetzt werden, indem serve.js übe
 
 PORT 1234, da ich nicht davon ausgehen kann, dass häufig verwendete Ports auf der Testmaschine frei sein werden.
 
-Farben: Grün = Schlange/Snake/Player Blau = Essen/Food
+Farben: Grün = Schlange/Snake/Player, Food wird durch eine PNG eines Apfels dargestellt. Diese skaliert sich ebenfalls nach den canvasDimensions, wie alles andere auch. Allerdings kann die Darstellung des Apfels einen kleinen Moment dauern, da ich diesen ueber eine URL eingebunden habe und dieser dann erst laden muss. Ich war mir nicht sicher wegen Urheberrechten, deshalb habe ich es nicht direkt als Datei gespeichert und eingebunden, sondern verlinke im Code auf die URL.
 
-Steuerung: W,A,S und D. Das Spiel wird begonnen, indem eine dieser Tasten gedrückt wird. Ist das Spiel beendet, muss die aufgerufene Website neu geladen werden, damit die nächste Runde begonnen werden kann.
+Steuerung: W,A,S und D oder Pfeilteasten. Das Spiel wird begonnen, indem eine dieser Tasten gedrückt wird.
+Neustart nach Ende des Spiels ueber Leertaste.
 
-Außerdem: Steuert man "rückwärts" in sich hinein, wird dies ebenfalls als "Schlange gefressen" gewertet. Dies könnte einfach verändert werden, jedoch wollte ich den Code zunächst auf das Wesentliche beschränken,
-
-Pascal Siemer
+Man läuft nun auch nicht mehr in sich hinein, ich habe eine Richtungspruefung eingebaut, damit das Spiel nicht sofort zuende ist, wenn man eine falsche Taste drückt
+  
+Ich habe mir einige Snake-Implementationen angeschaut und habe erkannt, dass eigentlich immer die Steuerng nach meinem vorherigen Konzept umgesetzt wurde. Um nun doch etwas zu aendern, verarbeite ich hier nun nicht mehr die letzte Eingabe, sondern die erste Eingabe pro durchlauf. Fühlt sich beim Steuern auch besser an, also eine gute Idee, dort ein wenig zu ändern und auszuprobieren.
+  
+  Pascal Siemer
